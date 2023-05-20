@@ -16,10 +16,8 @@ It has two templates named example.html and variables.html that are bieng used t
  It also tells us how we can imoprt the queryobject in our views and send it to our templates.
  Mentioned below are a lot of ways in which we are exploring on how and what features we can get through the use of defined variables in the models.
  
-1.way of creating the actual data and storing them accordingly would be to use the command python manage.py shell 
-
+1. way of creating the actual data and storing them accordingly would be to use the command python manage.py shell 
 2.and then importing the models from this class
-
 3.from office.models import patient
 4.fist way of creating it would be 
 5.carl = patient(first_name ="Carl",last_name ="Smith", age=30)
@@ -50,7 +48,10 @@ It has two templates named example.html and variables.html that are bieng used t
 30.carl= patient.objects.get(pk=1), will get us the data with primary key as one 
 31.carl.last_name= "duke" will update it and in order to save it we will call carl.save() at end to save it for sure 
 32.in order to delete an object refer it to an object and then delet that object like before we can just call carl.delete() to delete the object.
+
 This app has only one template named list.html adn just shows us what all we can do from the use of models in our project and how we can use terminal to access and playaround with the variables.
+
+      App name:- cars
 
 
 
