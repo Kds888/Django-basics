@@ -17,7 +17,9 @@ It has two templates named example.html and variables.html that are bieng used t
  Mentioned below are a lot of ways in which we are exploring on how and what features we can get through the use of defined variables in the models.
  
 1.way of creating the actual data and storing them accordingly would be to use the command python manage.py shell 
+
 2.and then importing the models from this class
+
 3.from office.models import patient
 4.fist way of creating it would be 
 5.carl = patient(first_name ="Carl",last_name ="Smith", age=30)
