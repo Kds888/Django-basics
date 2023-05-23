@@ -71,6 +71,40 @@ We will be passing the form to the templates and therefore we will inherit the d
 One more way of saving the data in the database is to gather the data through request.POST['data'] and then calling in the like models.car.object.create() method and is displayed in add_car view.
       
       App Name:- Classroom
+Here we discuss the use of dynamic links and different available views in django.views.generic, In this we create a class and then inherit the different views that we have in the class and then we can overwrite the inherited views by defining our own variables and assigning them with our own values for example: - 
+class HomeView(TemplateView):
+    template_name='classroom/home.html'
+
+These inherited views take care of the redundant task for us like saving the model form and we don't even have to use form.save or any other method for saving the details and one thing we have to take care about while using classes is when we are defining the urls of these,      path('',HomeView.as_view(),name='home'), we have to sue .as_view(), in order to pass the class as a function.
+
+These views automatically send some context in the templates and we can acess then there directly without have to mention about them all we need is to define the model that we are using and then the fields in the model and but we have to be careful while naming the templates in our app as the templatename should be like this model_detail.html for detail view. They are also able to handle the dynamic url concept on their own.
+
+The dynamic urls will be handled by the views[ djnago.generic.viwes ] like detailview,listview, they will handle the dynamic urls based off the id's in the database itself.
+path('teacher_detail/<int:pk>/',TeacherDetailView.as_view(),name='teacher_detail'),  pk is primary key, for detail view we need to pass the primary key as well so as to inform django which primary key we have to use ,these urls will look something like /classroom/teacher_detail/1/ where 1 represent primary key.
+
+We have to be carefull about the template names becuse based of each VIEW we have to define the template name accordingly to take benfot of these views. 
+
+The information about different views are written in the code for view.py in classroom app.
+
+      App Name:- Library
+      
+In this app we talk about various relationships that we have in the models of our class, The Inbuilt user model that can  be used from 'from django.contrib.auth.models import User', and a way of using the class meta in the models so as to dictate behaviour in the admin class.
+
+Args:- Non keyword arguments dictated by position passing of the index.
+Kwargs:- Keyword based arguments dictated by the key and value pair 
+
+In the models here we are using the uuid as primary key for the books in the library.
+Foriegn KEY defines one to many relationship. For example in the book model we have the foreign key as the autor as one author can write multiple book.
+Next comes the many to many field that we use to define many to many relationships like a genre in thsi case a book an have multiple genres and a genre can have multiple books.
+
+Here for signup we use the user creationform from inbuil functions of the django and CREATEVIEW fro djnago.views .generic to get the signup screen ready for the user to signup in our portal.
+The login template is the project based template that we are using from the django inbuil templates av=n dis accessed at 'localhost 8000:accounts/login'
+Here we are also using a login_required decorator[ useful for functions] along side the LOGINREQUIREDMIXIN[ useful for classes] as the use of login required mixin will require the user to be logged_in in order to get access to this page.
+
+List view also have a variable named paginate_by that allow us to define how much data we can show on one page an dthe models can be accessed on the template like modelname_list in the template.
+
+
+
 
 
 
