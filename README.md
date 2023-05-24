@@ -111,7 +111,7 @@ List view also have a variable named paginate_by that allow us to define how muc
         
  as everry user is accessible to that request and we can filter all the books 
  
- 
+                                                                              END
  <!---------------------------------------------------------------END----------------------------------------END--------------------------------------------------->
 
 
