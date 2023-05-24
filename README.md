@@ -1,4 +1,4 @@
-# Django-Web Development Projects
+# Django-Web Development Projects- Basics
 
 Codes for my Django projects 
 
