@@ -91,6 +91,7 @@ The information about different views are written in the code for view.py in cla
 In this app we talk about various relationships that we have in the models of our class, The Inbuilt user model that can  be used from 'from django.contrib.auth.models import User', and a way of using the class meta in the models so as to dictate behaviour in the admin class.
 
 Args:- Non keyword arguments dictated by position passing of the index.
+
 Kwargs:- Keyword based arguments dictated by the key and value pair 
 
 In the models here we are using the uuid as primary key for the books in the library.
@@ -98,12 +99,20 @@ Foriegn KEY defines one to many relationship. For example in the book model we h
 Next comes the many to many field that we use to define many to many relationships like a genre in thsi case a book an have multiple genres and a genre can have multiple books.
 
 Here for signup we use the user creationform from inbuil functions of the django and CREATEVIEW fro djnago.views .generic to get the signup screen ready for the user to signup in our portal.
+
 The login template is the project based template that we are using from the django inbuil templates av=n dis accessed at 'localhost 8000:accounts/login'
 Here we are also using a login_required decorator[ useful for functions] along side the LOGINREQUIREDMIXIN[ useful for classes] as the use of login required mixin will require the user to be logged_in in order to get access to this page.
 
 List view also have a variable named paginate_by that allow us to define how much data we can show on one page an dthe models can be accessed on the template like modelname_list in the template.
-
-
+ Each query has a request realted with it and we can filter the books based of the given request buy the user like    
+ def get_queryset(self):
+ 
+ return models.BookInstance.objects.filter(borrower=self.request.user), each query has a request related with it and 
+        
+ as everry user is accessible to that request and we can filter all the books 
+ 
+ 
+ <!---------------------------------------------------------------END----------------------------------------END--------------------------------------------------->
 
 
 
