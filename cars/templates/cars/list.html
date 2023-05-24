@@ -1,0 +1,19 @@
+{% extends "base1.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h1>List page</h1>
+    <ul>
+        {% for item in cars %}
+        <!-- This will print the __str__ statement that we defined in the models-->
+        <li>
+            {{item}}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+ 
+ {% endblock %}

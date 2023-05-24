@@ -1,0 +1,21 @@
+<h1>
+    Welcome to your profile
+</h1>
+ <h2>
+    Here are the books you checked out
+ </h2>
+
+ <!-- The model name will b eby the name of modelname_list in order to access the model here -->
+ 
+ {% if bookinstance_list is None %}
+ <p>
+    You have no books checked out as of now 
+ </p>
+
+ {% else %}
+
+ {% for book in bookinstance_list %}
+ <p>{{book}}</p>
+ {% endfor %}
+
+ {% endif %}

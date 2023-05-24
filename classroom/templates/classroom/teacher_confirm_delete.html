@@ -1,0 +1,10 @@
+<h1>Are you sure you want to delete the Teacher</h1>
+<h2>{{teacher.first_name}} {{teacher.last_name}}</h2><!-- automatic created by django and it will contain the value of the teacher we want to delete-->
+<form method="POST">
+
+    {% csrf_token%}
+    <input type="submit" value ="Confirm Submit"><!-- name of the button through value -->
+
+
+</form>
+<a href="{% url 'classroom:home' %}">Go back to home page</a>

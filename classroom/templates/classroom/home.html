@@ -1,0 +1,19 @@
+<h1> Home Screen </h1>
+<ul>
+    <li>
+    <a href="{% url 'classroom:thankyou' %}"> Thank You screen </a>
+    </li>
+    <li>
+    <a href="{% url 'classroom:contact' %}"> Contact Form screen </a>
+    </li>
+    <li>
+    <a href="{% url 'classroom:teacher_create' %}"> Create Teacher screen </a>
+    </li>
+    <li>
+    <a href="{% url 'classroom:teacher_list' %}"> List Teacher screen </a>
+    </li>
+
+    <!-- As we cannot add detail and update links here as they require a primary key to identify them alternatively
+    we can create a form that takes in the primary key and then let you display detials or let you update the information -->
+                
+</ul>

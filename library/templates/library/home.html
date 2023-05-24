@@ -1,0 +1,35 @@
+<h1>
+    Home Page
+</h1>
+
+<p>
+    Total Books: {{num_books}}
+</p>
+<p>
+    Number Available: {{num_instances_available}}
+</p>
+
+{% if user.is_authenticated %}
+<p>
+    You are logged in 
+</p>
+<p>
+    Welcome: {{user.get_username}}
+</p>
+<a href="{% url 'logout' %}">
+    <!-- as we removed the next we are now able to directly go to logout page -->
+   
+    CLick to Logout <!-- login and logout pages are already defined automatically -->
+    
+</a>
+{% else %}
+<p>
+    You are not Logged In 
+</p>
+<a href="{% url 'login' %}?next={{request.path}}"><!-- as the logic is defined in this page only the next[?next={{request.path}}] keyword redirects them again to the current page -->
+   
+    CLick to Login
+    <!-- due to next statemnet once user logged in they will be redirected again to home page -->
+</a>
+
+{% endif %}

@@ -1,0 +1,38 @@
+<!-- this should be the default page for login and it should be named as login.html -->
+ {% if form.errors %}<!-- we need to check for errors forst in our form-->
+ <p>
+    Your username or password was incorrect. Try again
+ </p>
+ {% endif %}
+
+ <!-- User logged in but no access -->
+ {% if next %}<!-- next keyword here checks for 2 things whetehr the user is authenticated and wheteher they have access to that page or not-->
+<!-- next and user.is_authenticated are all by default -->
+ {% if user.is_authenticated %} <!-- this means that the user was logged in and stilll don't have permission for that page-->
+ <p>
+    You don't have permission for this page
+ </p>
+  <!-- User not logged in-->
+ {% else %}
+ <p>
+    Please log In to see this page
+ </p>
+ {% endif %}
+ {% endif %}
+
+ <!-- logged form -->
+ <form action="{% url 'login' %}" method="POST">
+    <!-- all of these forms are bieng automatically created by django and the names are also automatically created  -->
+    {% csrf_token %}
+    {{form.username.label_tag}}
+    {{form.username}}
+
+    {{form.password.label_tag}}
+    {{form.password}}
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{next}}"><!-- need to look this up-->
+    <!-- By default it will takes us to the page /accounts/profile-->
+
+
+ </form>
+

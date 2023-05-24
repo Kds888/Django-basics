@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Variables Html</h1>
+    <h2>{{ first | upper }} {{last}}</h2><!-- here the | is used for applying filters in the html template side of things through django
+    it probably will be useful when we are taking data from the user and displaying it.-->
+
+    <!--double curly braces tells us to get that data is bieng send by the python and double curly braces means it's a variable -->
+    <h3>{{some_list.0}}</h3>
+    <!--to use indexed values in the dictionary-->
+
+    <h3>{{some_dict.inside_key}}</h3>
+    <!-- the way of using the dictionery passed values by key-->
+    <h3>{# This is comments in django for html file #}</h3>
+    <ul>
+    {%for item in some_list%}
+    <li>
+        {{item}}
+
+    </li>
+
+    {% endfor %}
+    </ul>
+    <!-- The above code is to loop through all the dictionary items in the for loop -->
+
+
+    {% if user_logged_in == True %}
+    <!-- This User_logged _in is passed by context processors that's why we can use them in any templates -->
+    <h1>Welcome back you are logged in</h1>
+    {% endif %}
+    <!-- These statements are not passed in the page source -->
+    <h1><a href="{% url 'one_one:example' %}">Click to go to example</a></h1>
+
+</body>
+</html>

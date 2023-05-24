@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}{# let html know that we are loading the static files here #}
+{% block content %}
+
+
+<h1>This is inside block in example.html</h1>
+<img src="{% static 'one_one/abc.jpg' %}" alt="Django Image">
+<h1><a href="{% url 'one_one:variable' %}">Click to go to variable</a></h1>
+
+
+{% endblock %}

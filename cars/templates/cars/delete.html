@@ -1,0 +1,23 @@
+{% extends "base1.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Delete page</h1>
+    <form action=""method='POST'> 
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="pk">Enter the primary key you want to delete  </label>
+            <input type="text" id="pk" name="pk" class="form-control">
+
+        </div>
+        <input type="submit" class="btn btn-primary ">
+
+<!-- the deleted cars have primary keys associated with them and they keep the same primary key once deleted we need a new primary key for us to delet through-->
+
+    </form>
+
+
+</div>
+
+ {% endblock %}

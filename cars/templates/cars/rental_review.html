@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content  %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'cars/cars.css' %}">
+</head>
+
+<h1>Rental Review</h1>
+<div class="container ">
+<form action="" method="POST">
+<!--
+    {{form.as_p}}-->
+
+    <!--.as_p wrap the form around with paragraph tag-->
+    <!-- to grab only one field from the form -->
+    <!-- {{form.first_name.label_tag}} {{form.first_name}} this will grab only the first name lable and input filed for that label -->
+
+            {% csrf_token %}
+            {% for field in form %}
+            <div class ='mb-3 '>
+                {{field.label_tag}}
+            </div>
+            {{field}}
+            {{field.errors}}
+            {% endfor %}
+    </div>
+<input class="btn btn-primary " type="submit">
+</form>
+{% endblock %}
